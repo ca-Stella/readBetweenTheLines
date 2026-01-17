@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dumoi7wqi40c2"]
+
+[ext_resource type="Script" uid="uid://cwh3bhm0t0eoe" path="res://scenes/game/store/button.gd" id="1_d0bc0"]
+
+[node name="Headline Button" type="Button"]
+offset_right = 12.0
+offset_bottom = 8.0
+script = ExtResource("1_d0bc0")

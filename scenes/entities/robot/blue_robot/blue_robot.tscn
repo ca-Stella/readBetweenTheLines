@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp1xl63bj3whe"]
+[gd_scene load_steps=3 format=3 uid="uid://cp1xl63bj3whe"]
 
-[ext_resource type="Script" uid="uid://br1kedgl7qpcg" path="res://scenes/entities/robot/blue_robot/blue_robot.gd" id="1_mksat"]
+[ext_resource type="Script" uid="uid://by3lp2ips6dgf" path="res://scenes/entities/robot/blue_robot/blue_robot.gd" id="1_mksat"]
+[ext_resource type="Texture2D" uid="uid://baiw7daxael8b" path="res://assets/images/newsletter/Newspaper.png" id="2_llhty"]
 
 [node name="BlueRobot" type="Node2D"]
 script = ExtResource("1_mksat")
+
+[node name="Newspaper" type="Sprite2D" parent="."]
+position = Vector2(201, 88)
+texture = ExtResource("2_llhty")

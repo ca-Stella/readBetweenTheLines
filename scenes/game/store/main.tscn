@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk2y5uwemm1gm"]
+
+[ext_resource type="Texture2D" uid="uid://baiw7daxael8b" path="res://assets/images/newsletter/Newspaper.png" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://doe8ma2wcbsn4" path="res://scenes/game/store/h_box_container.gd" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dumoi7wqi40c2" path="res://scenes/game/store/headline_button.tscn" id="3_kry3j"]
+
+[node name="main" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -45.0
+offset_right = 36.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8gbba")
+stretch_mode = 4
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -50.0
+offset_right = 500.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("2_jjvhh")
+
+[node name="Headline Button" parent="Buttons" instance=ExtResource("3_kry3j")]
+layout_mode = 1
+offset_left = -100.0
+offset_top = -36.5
+offset_right = 100.0
+offset_bottom = 36.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Gaming"
+autowrap_trim_flags = 0
