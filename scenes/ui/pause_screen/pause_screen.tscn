@@ -166,6 +166,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_r8jw4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_y1e5h")
 text = "Exit"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]

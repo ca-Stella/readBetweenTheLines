@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://v6pnldovg5yx"]
 
 [ext_resource type="Script" uid="uid://dmac83qlrl2x7" path="res://scenes/game/stats/hp.gd" id="1_mdprf"]
-[ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp/hpHolderGray.png" id="2_63nvp"]
+[ext_resource type="Texture2D" uid="uid://c7mr2hqobq0i5" path="res://assets/images/sprites/hp/hpHolderbrown.png" id="2_63nvp"]
 [ext_resource type="Texture2D" uid="uid://n41yvh8wf0aa" path="res://assets/images/sprites/hp/hpProgress.png" id="3_sugla"]
 [ext_resource type="Script" uid="uid://vf6bcogptpha" path="res://scenes/game/stats/progress_bar.gd" id="4_18qmu"]
 

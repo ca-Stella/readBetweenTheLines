@@ -1,0 +1,203 @@
+[gd_scene load_steps=15 format=3 uid="uid://ckvjy87ctxbtq"]
+
+[ext_resource type="Script" uid="uid://c3ka017scmemh" path="res://scenes/ui/options_screen/options_screen.gd" id="1_7kwx5"]
+[ext_resource type="Texture2D" uid="uid://bvgvs5858c8ea" path="res://assets/images/placeholderMenuScenes.jpg" id="2_ffxv1"]
+[ext_resource type="FontFile" uid="uid://c0875f21ekqxv" path="res://assets/fonts/GrapeSoda.ttf" id="3_usb7p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrl88"]
+texture = ExtResource("2_ffxv1")
+modulate_color = Color(0.44484326, 0.44484332, 0.4448432, 0.99215686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6r5x"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.96862745)
+shadow_size = 2
+shadow_offset = Vector2(0, 2.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssxgr"]
+bg_color = Color(0.5469679, 0.546968, 0.5469679, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.96862745)
+shadow_size = 2
+shadow_offset = Vector2(0, 2.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gprj"]
+bg_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.96862745)
+shadow_size = 2
+shadow_offset = Vector2(0, 2.1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_idcfv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kcbn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kwx5"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffxv1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usb7p"]
+bg_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrl88"]
+bg_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2.1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6r5x"]
+
+[node name="OptionsScreenStart" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7kwx5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.5
+offset_top = -136.5
+offset_right = 239.5
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yrl88")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.75
+offset_top = 26.5
+offset_right = 96.75
+offset_bottom = 79.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_usb7p")
+theme_override_font_sizes/font_size = 29
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.3125
+offset_top = -50.0
+offset_right = 91.3125
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="help" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.003519184, 0.00351916, 0.0035191686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6r5x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ssxgr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8gprj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_idcfv")
+text = "Help"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4kcbn")
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_7kwx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ffxv1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_usb7p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_yrl88")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o6r5x")
+text = "Mute"
+
+[node name="back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.003519184, 0.00351916, 0.0035191686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6r5x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ssxgr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8gprj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_idcfv")
+text = "Back"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/help" to="." method="_on_help_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]
