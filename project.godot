@@ -13,7 +13,6 @@ config_version=5
 config/name="theNoisyHeadline"
 run/main_scene="uid://khnleby8i3h6"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
 run/stretch/mode="canvas_items"
 run/size/viewport_height=180
 
@@ -25,5 +24,6 @@ window/stretch/mode="canvas_items"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

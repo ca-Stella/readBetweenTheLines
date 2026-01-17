@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvgvs5858c8ea"
-path="res://.godot/imported/HD-wallpaper-kotaku-loads-of-beautiful-background-art-from-studio-ghibli-s-movies-in-case-you-need-new-twitter.jpg-2d0f7afbda39198132c0eead9c056229.ctex"
+uid="uid://52j7xydfxtkf"
+path="res://.godot/imported/reroll_button.png-a8fa4fa8f50b565912c128fc7181d1a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/HD-wallpaper-kotaku-loads-of-beautiful-background-art-from-studio-ghibli-s-movies-in-case-you-need-new-twitter.jpg"
-dest_files=["res://.godot/imported/HD-wallpaper-kotaku-loads-of-beautiful-background-art-from-studio-ghibli-s-movies-in-case-you-need-new-twitter.jpg-2d0f7afbda39198132c0eead9c056229.ctex"]
+source_file="res://assets/images/newsletter/headlines/reroll_button.png"
+dest_files=["res://.godot/imported/reroll_button.png-a8fa4fa8f50b565912c128fc7181d1a4.ctex"]
 
 [params]
 
