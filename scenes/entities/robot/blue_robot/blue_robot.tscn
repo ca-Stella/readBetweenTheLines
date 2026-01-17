@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp1xl63bj3whe"]
+
+[ext_resource type="Script" uid="uid://br1kedgl7qpcg" path="res://scenes/entities/robot/blue_robot/blue_robot.gd" id="1_mksat"]
+
+[node name="BlueRobot" type="Node2D"]
+script = ExtResource("1_mksat")
