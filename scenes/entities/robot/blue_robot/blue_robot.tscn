@@ -1,11 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp1xl63bj3whe"]
+[gd_scene load_steps=9 format=3 uid="uid://cp1xl63bj3whe"]
 
-[ext_resource type="Script" uid="uid://by3lp2ips6dgf" path="res://scenes/entities/robot/blue_robot/blue_robot.gd" id="1_mksat"]
-[ext_resource type="Texture2D" uid="uid://baiw7daxael8b" path="res://assets/images/newsletter/Newspaper.png" id="2_llhty"]
+[ext_resource type="PackedScene" uid="uid://d14awcgysjd7v" path="res://scenes/entities/robot/robot.tscn" id="1_pqa1b"]
+[ext_resource type="Texture2D" uid="uid://bcrrew6ytijua" path="res://assets/images/sprites/blue_robot1.png" id="2_llhty"]
 
-[node name="BlueRobot" type="Node2D"]
-script = ExtResource("1_mksat")
+[sub_resource type="AtlasTexture" id="AtlasTexture_llhty"]
+atlas = ExtResource("2_llhty")
+region = Rect2(0, 0, 18, 30)
 
-[node name="Newspaper" type="Sprite2D" parent="."]
-position = Vector2(201, 88)
-texture = ExtResource("2_llhty")
+[sub_resource type="AtlasTexture" id="AtlasTexture_grn7a"]
+atlas = ExtResource("2_llhty")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6xeq"]
+atlas = ExtResource("2_llhty")
+region = Rect2(36, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcdjx"]
+atlas = ExtResource("2_llhty")
+region = Rect2(54, 0, 18, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8ada"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llhty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grn7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6xeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcdjx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs5ih"]
+size = Vector2(14, 30)
+
+[node name="Robot" instance=ExtResource("1_pqa1b")]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." index="1"]
+position = Vector2(221, 123)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="0"]
+texture_filter = 1
+position = Vector2(-1, -2)
+sprite_frames = SubResource("SpriteFrames_w8ada")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="1"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_rs5ih")
