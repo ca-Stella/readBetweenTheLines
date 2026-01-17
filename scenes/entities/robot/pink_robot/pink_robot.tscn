@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b08choopv6swg"]
+
+[ext_resource type="PackedScene" uid="uid://d14awcgysjd7v" path="res://scenes/entities/robot/robot.tscn" id="1_mi701"]
+[ext_resource type="Texture2D" uid="uid://ehyls1l1ddtd" path="res://assets/images/sprites/pink_robot.png" id="2_m5p7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1josp"]
+size = Vector2(16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4glwg"]
+atlas = ExtResource("2_m5p7u")
+region = Rect2(0, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gletr"]
+atlas = ExtResource("2_m5p7u")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03kmw"]
+atlas = ExtResource("2_m5p7u")
+region = Rect2(36, 0, 18, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kr22e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4glwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gletr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03kmw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Robot" instance=ExtResource("1_mi701")]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="0"]
+position = Vector2(252, 120)
+shape = SubResource("RectangleShape2D_1josp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+texture_filter = 1
+position = Vector2(252, 120)
+sprite_frames = SubResource("SpriteFrames_kr22e")
+animation = &"walk"
