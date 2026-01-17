@@ -1,9 +1,180 @@
-[gd_scene format=3 uid="uid://krpgsv0vgr13"]
+[gd_scene load_steps=12 format=3 uid="uid://dbqod2v232pnt"]
 
-[node name="PauseScreen" type="Control"]
+[ext_resource type="Script" uid="uid://djd8qknn0jjkx" path="res://scenes/ui/pause_screen/pause_menu.gd" id="1_05uyy"]
+[ext_resource type="Texture2D" uid="uid://bvgvs5858c8ea" path="res://assets/images/HD-wallpaper-kotaku-loads-of-beautiful-background-art-from-studio-ghibli-s-movies-in-case-you-need-new-twitter.jpg" id="2_p81d2"]
+[ext_resource type="FontFile" uid="uid://c0875f21ekqxv" path="res://assets/fonts/GrapeSoda.ttf" id="3_2nc7s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3xb4"]
+texture = ExtResource("2_p81d2")
+modulate_color = Color(0.36210802, 0.36210802, 0.36210802, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxa3g"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(0, 3.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8sti"]
+bg_color = Color(0.47202516, 0.47202528, 0.47202492, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(0, 3.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2yj1"]
+bg_color = Color(0.7666196, 0.76661956, 0.76661956, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(0, 3.1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a32ks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7dbl"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(0, 3.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lv42l"]
+bg_color = Color(0.47202516, 0.47202528, 0.47202492, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(0, 3.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ub45p"]
+bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(0, 3.1)
+
+[node name="PauseMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_05uyy")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d3xb4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -125.25
+offset_right = 190.0
+offset_bottom = 125.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxa3g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e8sti")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q2yj1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a32ks")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7dbl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lv42l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ub45p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a32ks")
+text = "Restart"
+
+[node name="FAQ" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7dbl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lv42l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ub45p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a32ks")
+text = "FAQ/Save/Options??"
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7dbl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lv42l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ub45p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a32ks")
+text = "Exit"
+
+[node name="game name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -355.5
+offset_top = -221.0
+offset_right = 355.5
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9607843)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("3_2nc7s")
+theme_override_font_sizes/font_size = 61
+text = "Paused"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/FAQ" to="." method="_on_faq_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
