@@ -11,9 +11,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_game_pressed() -> void:
-	print("start pressed")
-#get_tree().change_scene_to_file("game window here")
+func _on_start_pressed() -> void:
+		print("start pressed")
+#get_tree().change_scene_to_file("game scene here")
+
 
 func _on_options_pressed() -> void:
 	print("options pressed")
