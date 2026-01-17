@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dbqod2v232pnt"]
 
-[ext_resource type="Script" uid="uid://c6ottap8518lu" path="res://pause_menu.gd" id="1_05uyy"]
-[ext_resource type="Texture2D" uid="uid://o1cmk44vhhyj" path="res://HD-wallpaper-kotaku-loads-of-beautiful-background-art-from-studio-ghibli-s-movies-in-case-you-need-new-twitter.jpg" id="2_p81d2"]
-[ext_resource type="FontFile" uid="uid://crlimk74dk400" path="res://GrapeSoda.ttf" id="3_2nc7s"]
+[ext_resource type="Script" uid="uid://djd8qknn0jjkx" path="res://scenes/ui/pause_screen/pause_menu.gd" id="1_05uyy"]
+[ext_resource type="Texture2D" uid="uid://bvgvs5858c8ea" path="res://assets/images/HD-wallpaper-kotaku-loads-of-beautiful-background-art-from-studio-ghibli-s-movies-in-case-you-need-new-twitter.jpg" id="2_p81d2"]
+[ext_resource type="FontFile" uid="uid://c0875f21ekqxv" path="res://assets/fonts/GrapeSoda.ttf" id="3_2nc7s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3xb4"]
 texture = ExtResource("2_p81d2")
