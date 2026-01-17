@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://7huukrp8bcut"]
+[gd_scene load_steps=2 format=3 uid="uid://7huukrp8bcut"]
 
 [ext_resource type="Script" uid="uid://c5l7hkyurudw5" path="res://scenes/game/store/store.gd" id="1_b3ned"]
-[ext_resource type="PackedScene" uid="uid://cary8lex75lvy" path="res://scenes/game/store/headline_choice.tscn" id="2_27bpi"]
 
 [node name="Store" type="CanvasLayer"]
 script = ExtResource("1_b3ned")
@@ -23,12 +22,3 @@ offset_bottom = 253.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
-
-[node name="HeadlineChoice" parent="ColorRect/HBoxContainer" instance=ExtResource("2_27bpi")]
-layout_mode = 2
-
-[node name="HeadlineChoice2" parent="ColorRect/HBoxContainer" instance=ExtResource("2_27bpi")]
-layout_mode = 2
-
-[node name="HeadlineChoice3" parent="ColorRect/HBoxContainer" instance=ExtResource("2_27bpi")]
-layout_mode = 2

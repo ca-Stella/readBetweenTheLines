@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cary8lex75lvy"]
+[gd_scene load_steps=5 format=3 uid="uid://cary8lex75lvy"]
 
+[ext_resource type="Script" uid="uid://uhna1ulsjs3x" path="res://scenes/game/store/headline_choice.gd" id="1_feqra"]
 [ext_resource type="Texture2D" uid="uid://ccx0qia7vecq6" path="res://assets/images/newsletter/headlines/choice_box.png" id="1_vteu3"]
 [ext_resource type="FontFile" uid="uid://5hud7jfeovhv" path="res://assets/fonts/m5x7.ttf" id="2_cco2w"]
 [ext_resource type="Texture2D" uid="uid://52j7xydfxtkf" path="res://assets/images/newsletter/headlines/reroll_button.png" id="2_jjlct"]
@@ -20,6 +21,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 16
 alignment = 1
+script = ExtResource("1_feqra")
 
 [node name="Information" type="TextureButton" parent="."]
 layout_mode = 2
@@ -51,3 +53,6 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("2_jjlct")
+
+[connection signal="pressed" from="Information" to="." method="_on_information_pressed"]
+[connection signal="pressed" from="Reroll" to="." method="_on_reroll_pressed"]
