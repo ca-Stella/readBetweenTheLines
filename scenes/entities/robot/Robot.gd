@@ -31,13 +31,10 @@ func _process(delta: float) -> void:
 		is_mad = false
 	if self.colour == "blue":
 		reputation = self.get_parent().get_parent().blue
-		print("blue rep",reputation)
 	elif self.colour == "green":
 		reputation = self.get_parent().get_parent().green
-		print("green rep",reputation)
 	elif self.colour == "pink":
 		reputation = self.get_parent().get_parent().pink
-		print("pink rep",reputation)
 	
 func _physics_process(delta: float) -> void:
 	if is_scared:

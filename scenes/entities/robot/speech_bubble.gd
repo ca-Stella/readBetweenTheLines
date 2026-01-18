@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func show_bubble(c):
+	print("hi")
 	colour = c
 	showing = true
 	var general_phrases = []
