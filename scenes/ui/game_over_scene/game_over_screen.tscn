@@ -1,18 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3wbx0ov48nk7"]
 
 [ext_resource type="Texture2D" uid="uid://duchfpx1di03w" path="res://assets/images/newsletter/store_box.png" id="1_whiwd"]
-[ext_resource type="FontFile" uid="uid://b4innq8v5r3ri" path="res://assets/fonts/GrapeSoda.ttf" id="2_xi6l0"]
+[ext_resource type="FontFile" uid="uid://bnn0x0n38ja6l" path="res://assets/fonts/GrapeSoda.ttf" id="2_xi6l0"]
 
-[node name="GameOverScreen" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameOverScreen" type="CanvasLayer"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

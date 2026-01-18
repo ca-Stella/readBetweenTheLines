@@ -1,5 +1,6 @@
 extends Control
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,9 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_pressed() -> void:
-	print("start pressed")
-	get_tree().change_scene_to_file("res://scenes/game/world/world.tscn")
 
 #get_tree().change_scene_to_file("game scene here")
 

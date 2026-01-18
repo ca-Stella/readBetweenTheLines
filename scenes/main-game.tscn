@@ -1,8 +1,8 @@
-
-[gd_scene load_steps=13 format=3 uid="uid://cmlr1byd61u4c"]
+[gd_scene load_steps=18 format=3 uid="uid://cmlr1byd61u4c"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
 [ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
+[ext_resource type="PackedScene" uid="uid://fy4euff3u60u" path="res://scenes/ui/start_screen/start_screen.tscn" id="2_itmgl"]
 [ext_resource type="PackedScene" uid="uid://bn8p1gihlkk27" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
 [ext_resource type="PackedScene" uid="uid://7huukrp8bcut" path="res://scenes/game/store/store.tscn" id="3_vkcxy"]
 [ext_resource type="Script" uid="uid://cwpxmt2dhhohr" path="res://scenes/game/stats/stats_scene.gd" id="4_bxljq"]
@@ -12,44 +12,26 @@
 [ext_resource type="Texture2D" uid="uid://c7lgipyqoclfw" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_disabled.png" id="6_vl07w"]
 [ext_resource type="Texture2D" uid="uid://blkguohv5lvkq" path="res://assets/images/newsletter/headlines/close_hovered.png" id="6_w232t"]
 [ext_resource type="Texture2D" uid="uid://duchfpx1di03w" path="res://assets/images/newsletter/store_box.png" id="6_xrv8w"]
-
 [ext_resource type="Texture2D" uid="uid://bye1pjqigt122" path="res://assets/images/sprites/shop/goldenNewspaper_bw.png" id="7_aiqjj"]
 [ext_resource type="Texture2D" uid="uid://dli62d6l5n8lh" path="res://assets/images/sprites/shop/boba_bw.png" id="8_28bfx"]
 [ext_resource type="Texture2D" uid="uid://f0fbapb2i25y" path="res://assets/images/sprites/shop/school_bw.png" id="9_64rpb"]
 [ext_resource type="Texture2D" uid="uid://bsu1dlvli8el6" path="res://assets/images/sprites/shop/park_bw.png" id="10_cpt4g"]
-
 [ext_resource type="PackedScene" uid="uid://b3wbx0ov48nk7" path="res://scenes/ui/game_over_scene/game_over_screen.tscn" id="12_5pt6e"]
-
 
 [node name="MainGame" type="Node"]
 script = ExtResource("1_087lc")
 
+[node name="StartScreen" parent="." instance=ExtResource("2_itmgl")]
+size_flags_horizontal = 4
+
 [node name="World" parent="." instance=ExtResource("1_2vlba")]
+visible = false
 
 [node name="StatsScene" parent="World" instance=ExtResource("2_vkcxy")]
 size_flags_horizontal = 8
 script = ExtResource("4_bxljq")
 
-
 [node name="ColorRect" parent="World/StatsScene" index="0"]
-[node name="VBoxContainer2" type="VBoxContainer" parent="World/StatsScene"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 0
-offset_left = -248.00002
-offset_top = 5.0
-offset_right = 5.3333282
-offset_bottom = 19.0
-scale = Vector2(3.4, 2)
-
-[node name="ChaosBar" type="TextureProgressBar" parent="World/StatsScene/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-value = 50.0
-texture_under = ExtResource("5_2ggl6")
-texture_progress = ExtResource("6_5pt6e")
-
-[node name="ColorRect" parent="World/StatsScene" index="1"]
 offset_left = -120.0
 offset_bottom = -169.0
 
@@ -112,6 +94,23 @@ offset_top = 34.0
 offset_right = 31.0
 offset_bottom = 41.0
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="World/StatsScene"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 0
+offset_left = -248.00002
+offset_top = 5.0
+offset_right = 5.3333282
+offset_bottom = 19.0
+scale = Vector2(3.4, 2)
+
+[node name="ChaosBar" type="TextureProgressBar" parent="World/StatsScene/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+value = 50.0
+texture_under = ExtResource("5_2ggl6")
+texture_progress = ExtResource("6_5pt6e")
+
 [node name="Store" parent="." instance=ExtResource("3_vkcxy")]
 visible = false
 
@@ -136,12 +135,39 @@ texture_hover = ExtResource("6_w232t")
 [node name="VBoxContainer" parent="Store/ColorRect/HBoxContainer" index="1"]
 theme_override_constants/separation = 14
 
+[node name="GameOverScreenWin" parent="." instance=ExtResource("12_5pt6e")]
+visible = false
 
-[node name="GameOverScreen" parent="." instance=ExtResource("12_5pt6e")]
+[node name="TextureRect" parent="GameOverScreenWin" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -105.0
+offset_right = 150.0
+offset_bottom = 105.0
+size_flags_horizontal = 4
 
-[node name="Game_State" parent="GameOverScreen/TextureRect" index="1"]
+[node name="Game_State" parent="GameOverScreenWin/TextureRect" index="1"]
 theme_override_font_sizes/font_size = 10
 
+[node name="GameOverScreenLoss" parent="." instance=ExtResource("12_5pt6e")]
+visible = false
+
+[node name="TextureRect" parent="GameOverScreenLoss" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -105.0
+offset_right = 150.0
+offset_bottom = 105.0
+
+[connection signal="pressed" from="StartScreen/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/GNewsButton" to="." method="_on_g_news_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/BobaButton" to="." method="_on_boba_button_pressed"]
@@ -152,6 +178,8 @@ theme_override_font_sizes/font_size = 10
 [connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="." method="_on_close_shop_pressed"]
 [connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="World/StatsScene" method="_on_close_shop_pressed"]
 
+[editable path="StartScreen"]
 [editable path="World/StatsScene"]
 [editable path="Store"]
-[editable path="GameOverScreen"]
+[editable path="GameOverScreenWin"]
+[editable path="GameOverScreenLoss"]
