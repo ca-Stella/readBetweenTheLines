@@ -64,3 +64,7 @@ func _on_reroll_pressed() -> void:
 func update_scene() -> void: 
 	$Information/HBoxContainer/CostLabel.text = str(self.cost)
 	$Information/HeadlineLabel.text = str(self.headline)
+
+func unselect() -> void : 
+	$Information.button_pressed = false
+	$Reroll.button_pressed = false

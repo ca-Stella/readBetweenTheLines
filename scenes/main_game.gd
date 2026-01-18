@@ -27,6 +27,7 @@ func _on_store_update_stats(data: Variant) -> void:
 
 
 func _on_button_pressed() -> void:
+	store_scene.setup()
 	store_scene.visible = true
 	$World/StatsScene/VBoxContainer/Button.disabled=true
 
@@ -34,3 +35,4 @@ func _on_button_pressed() -> void:
 
 func _on_close_shop_pressed() -> void:
 	$World/StatsScene/VBoxContainer/Button.disabled=false
+	$Store.unselectAll()

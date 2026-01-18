@@ -214,6 +214,9 @@ var headlines = {
 func _ready() -> void:
 	headline_choice = load("res://scenes/game/store/headline_choice.tscn")
 	
+	setup()
+	
+func setup() -> void : 
 	
 	var random_items = get_random_headlines(headlines, 3)
 
@@ -225,7 +228,6 @@ func _ready() -> void:
 	headline2.set_headline_info(headlines[random_items[1]][0], headlines[random_items[1]][1])
 	headline3.set_headline_info(headlines[random_items[2]][0], headlines[random_items[2]][1])
 
-	
 
 # Function to get random items from the dictionary
 func get_random_headlines(dict: Dictionary, count: int) -> Array:
@@ -257,3 +259,8 @@ func _on_headline_choice_2_headline_selected(data: Variant) -> void:
 
 func _on_headline_choice_3_headline_selected(data: Variant) -> void:
 	emit_signal("update_stats", data) # Replace with function body.
+
+func unselectAll() -> void : 
+	$ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice.unselect()
+	$ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice2.unselect()
+	$ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice3.unselect()
