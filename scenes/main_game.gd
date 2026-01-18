@@ -46,7 +46,19 @@ func _on_store_update_stats(data: Variant) -> void:
 	
 	$World/StatsScene/VBoxContainer2/ChaosBar.value = (blue + green + pink)/3
 	
+	var value = $World/StatsScene/VBoxContainer2/ChaosBar.value
+	
 	$World/StatsScene/VBoxContainer/HBoxContainer/Money.set_text(str(money))
+	
+	if (value == 0):
+		$GameOverScreen/TextureRect/Game_State.set_text("Everything was in Chaos!!! You lost!!!")
+		get_tree().change_scene_to_file("res://scenes/ui/game_over_scene/game_over_screen.tscn")
+		print("Everything went to shi")
+	
+	if (value == 100):
+		$GameOverScreen/TextureRect/Game_State.set_text("You Won!!! World Peace Achieved!!!")
+		get_tree().change_scene_to_file("res://scenes/ui/game_over_scene/game_over_screen.tscn")
+		print("You won, world peace achieved")
 	
 	
 

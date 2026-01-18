@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmlr1byd61u4c"]
+[gd_scene load_steps=13 format=3 uid="uid://cmlr1byd61u4c"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
 [ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c7lgipyqoclfw" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_disabled.png" id="6_vl07w"]
 [ext_resource type="Texture2D" uid="uid://blkguohv5lvkq" path="res://assets/images/newsletter/headlines/close_hovered.png" id="6_w232t"]
 [ext_resource type="Texture2D" uid="uid://duchfpx1di03w" path="res://assets/images/newsletter/store_box.png" id="6_xrv8w"]
+[ext_resource type="PackedScene" uid="uid://b3wbx0ov48nk7" path="res://scenes/ui/game_over_scene/game_over_screen.tscn" id="12_5pt6e"]
 
 [node name="MainGame" type="Node"]
 script = ExtResource("1_087lc")
@@ -87,6 +88,11 @@ texture_hover = ExtResource("6_w232t")
 [node name="VBoxContainer" parent="Store/ColorRect/HBoxContainer" index="1"]
 theme_override_constants/separation = 14
 
+[node name="GameOverScreen" parent="." instance=ExtResource("12_5pt6e")]
+
+[node name="Game_State" parent="GameOverScreen/TextureRect" index="1"]
+theme_override_font_sizes/font_size = 10
+
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/GNewsButton" to="." method="_on_g_news_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/BobaButton" to="." method="_on_boba_button_pressed"]
@@ -99,3 +105,4 @@ theme_override_constants/separation = 14
 
 [editable path="World/StatsScene"]
 [editable path="Store"]
+[editable path="GameOverScreen"]
