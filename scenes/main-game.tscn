@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmlr1byd61u4c"]
+[gd_scene load_steps=12 format=3 uid="uid://cmlr1byd61u4c"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
 [ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
-[ext_resource type="PackedScene" uid="uid://cdh18q3xcsky6" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
+[ext_resource type="PackedScene" uid="uid://bn8p1gihlkk27" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
 [ext_resource type="PackedScene" uid="uid://7huukrp8bcut" path="res://scenes/game/store/store.tscn" id="3_vkcxy"]
 [ext_resource type="Script" uid="uid://cwpxmt2dhhohr" path="res://scenes/game/stats/stats_scene.gd" id="4_bxljq"]
+[ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="5_2ggl6"]
 [ext_resource type="Texture2D" uid="uid://do2vx0i8uy3y1" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_hover.png" id="5_ebdxb"]
+[ext_resource type="Texture2D" uid="uid://n41yvh8wf0aa" path="res://assets/images/sprites/hp_stats/hpProgress.png" id="6_5pt6e"]
 [ext_resource type="Texture2D" uid="uid://c7lgipyqoclfw" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_disabled.png" id="6_vl07w"]
 [ext_resource type="Texture2D" uid="uid://blkguohv5lvkq" path="res://assets/images/newsletter/headlines/close_hovered.png" id="6_w232t"]
 [ext_resource type="Texture2D" uid="uid://duchfpx1di03w" path="res://assets/images/newsletter/store_box.png" id="6_xrv8w"]
@@ -19,10 +21,35 @@ script = ExtResource("1_087lc")
 size_flags_horizontal = 8
 script = ExtResource("4_bxljq")
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="World/StatsScene"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 0
+offset_left = -248.00002
+offset_top = 5.0
+offset_right = 5.3333282
+offset_bottom = 19.0
+scale = Vector2(3.4, 2)
 
-[node name="ColorRect" parent="World/StatsScene" index="0"]
+[node name="ChaosBar" type="TextureProgressBar" parent="World/StatsScene/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+value = 50.0
+texture_under = ExtResource("5_2ggl6")
+texture_progress = ExtResource("6_5pt6e")
+
+[node name="ColorRect" parent="World/StatsScene" index="1"]
 offset_left = -120.0
 offset_bottom = -169.0
+
+[node name="Label2" parent="World/StatsScene/VBoxContainer/HBoxContainer" index="1"]
+theme_override_colors/font_color = Color(0.5411765, 0.6901961, 0.3764706, 1)
+theme_override_colors/font_shadow_color = Color(0.3647059, 0.4745098, 0.23529412, 1)
+theme_override_font_sizes/font_size = 14
+text = "      $"
+
+[node name="Money" parent="World/StatsScene/VBoxContainer/HBoxContainer" index="2"]
+text = "0"
 
 [node name="Space" parent="World/StatsScene/VBoxContainer/VBoxContainer" index="6"]
 theme_override_font_sizes/font_size = 5
@@ -37,6 +64,7 @@ texture_disabled = ExtResource("6_vl07w")
 theme_override_font_sizes/font_size = 2
 
 [node name="Store" parent="." instance=ExtResource("3_vkcxy")]
+visible = false
 
 [node name="ColorRect" parent="Store" index="0"]
 offset_left = 30.0
@@ -60,7 +88,6 @@ texture_hover = ExtResource("6_w232t")
 theme_override_constants/separation = 14
 
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/Button" to="." method="_on_button_pressed"]
-
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/GNewsButton" to="." method="_on_g_news_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/BobaButton" to="." method="_on_boba_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/SchoolButton" to="." method="_on_school_button_pressed"]

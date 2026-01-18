@@ -40,6 +40,12 @@ func _on_store_update_stats(data: Variant) -> void:
 	
 	var money = int(a) + data["cost"]
 	
+	var blue = $World/StatsScene/VBoxContainer/VBoxContainer/Blue.value
+	var green = $World/StatsScene/VBoxContainer/VBoxContainer/Green.value
+	var pink = $World/StatsScene/VBoxContainer/VBoxContainer/Pink.value
+	
+	$World/StatsScene/VBoxContainer2/ChaosBar.value = (blue + green + pink)/3
+	
 	$World/StatsScene/VBoxContainer/HBoxContainer/Money.set_text(str(money))
 	
 	
