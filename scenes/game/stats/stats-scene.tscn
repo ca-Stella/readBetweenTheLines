@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdh18q3xcsky6"]
+[gd_scene load_steps=10 format=3 uid="uid://cdh18q3xcsky6"]
 
+[ext_resource type="FontFile" uid="uid://c0875f21ekqxv" path="res://assets/fonts/GrapeSoda.ttf" id="1_7y7b7"]
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="1_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://c8srtfhb8h4cb" path="res://assets/images/sprites/hp_stats/blueRep.png" id="2_i1q70"]
 [ext_resource type="Texture2D" uid="uid://dvj0kg0a77nms" path="res://assets/images/sprites/hp_stats/pinkRep.png" id="2_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://ovq0mwynacn5" path="res://assets/images/sprites/hp_stats/greenRep.png" id="3_fkico"]
 [ext_resource type="Texture2D" uid="uid://bk1b4f080apnf" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON.png" id="5_i1q70"]
 [ext_resource type="Texture2D" uid="uid://ddpxmj0cn2yt1" path="res://assets/images/sprites/hp_stats/shop.png" id="6_fkico"]
+[ext_resource type="Texture2D" uid="uid://rsyhi80g8w3r" path="res://assets/images/sprites/shop/goldenNewspaper.png" id="8_yh1ei"]
+[ext_resource type="Texture2D" uid="uid://cx45flhg4t40t" path="res://assets/images/sprites/shop/boba.png" id="9_m0ggt"]
 
 [node name="StatsScene" type="Control"]
 layout_mode = 3
@@ -30,7 +33,7 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 0
 offset_left = 360.0
 offset_right = 480.0
-offset_bottom = 66.0
+offset_bottom = 270.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -38,12 +41,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("1_7y7b7")
+theme_override_font_sizes/font_size = 18
 text = "  Stats:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "        "
+text = "      "
 
 [node name="Money" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -52,8 +58,9 @@ theme_override_colors/font_color = Color(0.5411765, 0.6901961, 0.3764706, 1)
 theme_override_colors/font_shadow_color = Color(0.36300355, 0.47612607, 0.23468116, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 13
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("1_7y7b7")
+theme_override_font_sizes/font_size = 16
 text = "$ ..."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
@@ -112,3 +119,62 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("6_fkico")
+
+[node name="Control" type="Control" parent="VBoxContainer/VBoxContainer2/TextureRect"]
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 34.0
+offset_right = 39.0
+offset_bottom = 39.0
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -24.0
+offset_right = 29.0
+offset_bottom = 6.0
+texture_normal = ExtResource("8_yh1ei")
+
+[node name="GoldNewsPrice" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 31.0
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 4
+text = "$ 1000 "
+
+[node name="GoldNewsDesc" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 39.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 3
+text = "Golden Newspapers"
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 11.0
+offset_right = 63.0
+offset_bottom = 41.0
+texture_normal = ExtResource("9_m0ggt")
+
+[node name="BobaPrice" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 64.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 4
+text = "$ 1000 "
+
+[node name="BobaDesc" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 41.0
+offset_right = 74.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 3
+text = "Boba Machine"
