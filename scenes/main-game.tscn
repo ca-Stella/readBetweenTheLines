@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmlr1byd61u4c"]
+[gd_scene load_steps=14 format=3 uid="uid://cmlr1byd61u4c"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
 [ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://c7lgipyqoclfw" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_disabled.png" id="6_vl07w"]
 [ext_resource type="Texture2D" uid="uid://blkguohv5lvkq" path="res://assets/images/newsletter/headlines/close_hovered.png" id="6_w232t"]
 [ext_resource type="Texture2D" uid="uid://duchfpx1di03w" path="res://assets/images/newsletter/store_box.png" id="6_xrv8w"]
+[ext_resource type="Texture2D" uid="uid://bye1pjqigt122" path="res://assets/images/sprites/shop/goldenNewspaper_bw.png" id="7_aiqjj"]
+[ext_resource type="Texture2D" uid="uid://dli62d6l5n8lh" path="res://assets/images/sprites/shop/boba_bw.png" id="8_28bfx"]
+[ext_resource type="Texture2D" uid="uid://f0fbapb2i25y" path="res://assets/images/sprites/shop/school_bw.png" id="9_64rpb"]
+[ext_resource type="Texture2D" uid="uid://bsu1dlvli8el6" path="res://assets/images/sprites/shop/park_bw.png" id="10_cpt4g"]
 
 [node name="MainGame" type="Node"]
 script = ExtResource("1_087lc")
@@ -35,6 +39,44 @@ texture_disabled = ExtResource("6_vl07w")
 [node name="Space" parent="World/StatsScene/VBoxContainer" index="3"]
 theme_override_font_sizes/font_size = 2
 
+[node name="GNewsButton" parent="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control" index="0"]
+toggle_mode = true
+texture_pressed = ExtResource("7_aiqjj")
+texture_hover = ExtResource("7_aiqjj")
+texture_disabled = ExtResource("7_aiqjj")
+
+[node name="GoldNewsPrice" parent="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control" index="1"]
+offset_left = 4.0
+offset_right = 32.0
+
+[node name="BobaButton" parent="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control" index="3"]
+toggle_mode = true
+texture_pressed = ExtResource("8_28bfx")
+texture_hover = ExtResource("8_28bfx")
+texture_disabled = ExtResource("8_28bfx")
+
+[node name="SchoolButton" parent="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control" index="6"]
+toggle_mode = true
+texture_pressed = ExtResource("9_64rpb")
+texture_hover = ExtResource("9_64rpb")
+texture_disabled = ExtResource("9_64rpb")
+
+[node name="SchoolPrice" parent="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control" index="7"]
+offset_left = 38.0
+offset_right = 66.0
+
+[node name="ParkButton" parent="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control" index="9"]
+toggle_mode = true
+texture_pressed = ExtResource("10_cpt4g")
+texture_hover = ExtResource("10_cpt4g")
+texture_disabled = ExtResource("10_cpt4g")
+
+[node name="ParkPrice" parent="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control" index="10"]
+offset_left = 3.0
+offset_top = 34.0
+offset_right = 31.0
+offset_bottom = 41.0
+
 [node name="Store" parent="." instance=ExtResource("3_vkcxy")]
 
 [node name="ColorRect" parent="Store" index="0"]
@@ -59,6 +101,10 @@ texture_hover = ExtResource("6_w232t")
 theme_override_constants/separation = 14
 
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/GNewsButton" to="." method="_on_g_news_button_pressed"]
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/BobaButton" to="." method="_on_boba_button_pressed"]
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/SchoolButton" to="." method="_on_school_button_pressed"]
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/ParkButton" to="." method="_on_park_button_pressed"]
 [connection signal="shop_closed" from="Store" to="." method="_on_store_shop_closed"]
 [connection signal="update_stats" from="Store" to="." method="_on_store_update_stats"]
 [connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="." method="_on_close_shop_pressed"]
