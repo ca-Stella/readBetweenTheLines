@@ -1,7 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp1xl63bj3whe"]
+[gd_scene load_steps=16 format=3 uid="uid://cp1xl63bj3whe"]
 
+[ext_resource type="Script" uid="uid://5nsse3q1e2jm" path="res://scenes/entities/robot/blue_robot/blue_robot.gd" id="1_mksat"]
 [ext_resource type="PackedScene" uid="uid://d14awcgysjd7v" path="res://scenes/entities/robot/robot.tscn" id="1_pqa1b"]
 [ext_resource type="Texture2D" uid="uid://bcrrew6ytijua" path="res://assets/images/sprites/blue_robot1.png" id="2_llhty"]
+[ext_resource type="Texture2D" uid="uid://pnwlqiveem0e" path="res://assets/images/sprites/blue_robot_scared-export.png" id="3_s6xeq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs5ih"]
+size = Vector2(14, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8ada"]
+atlas = ExtResource("3_s6xeq")
+region = Rect2(0, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs5ih"]
+atlas = ExtResource("3_s6xeq")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf1vh"]
+atlas = ExtResource("3_s6xeq")
+region = Rect2(36, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_darle"]
+atlas = ExtResource("3_s6xeq")
+region = Rect2(54, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llhty"]
 atlas = ExtResource("2_llhty")
@@ -23,6 +44,23 @@ region = Rect2(54, 0, 18, 30)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_w8ada")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs5ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf1vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_darle")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_llhty")
 }, {
 "duration": 1.0,
@@ -39,20 +77,30 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs5ih"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6xeq"]
 size = Vector2(14, 30)
 
 [node name="Robot" instance=ExtResource("1_pqa1b")]
+script = ExtResource("1_mksat")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." index="1"]
-position = Vector2(221, 123)
+collision_mask = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="0"]
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" index="0"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" index="0"]
+position = Vector2(0, -2)
+scale = Vector2(5, 3)
+shape = SubResource("RectangleShape2D_rs5ih")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
 texture_filter = 1
 position = Vector2(-1, -2)
+scale = Vector2(1.0000001, 1)
 sprite_frames = SubResource("SpriteFrames_w8ada")
-animation = &"walk"
+animation = &"scared"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="2"]
 position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_rs5ih")
+shape = SubResource("RectangleShape2D_s6xeq")

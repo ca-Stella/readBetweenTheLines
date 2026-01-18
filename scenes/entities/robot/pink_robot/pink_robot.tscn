@@ -1,10 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://b08choopv6swg"]
+[gd_scene load_steps=14 format=3 uid="uid://b08choopv6swg"]
 
 [ext_resource type="PackedScene" uid="uid://d14awcgysjd7v" path="res://scenes/entities/robot/robot.tscn" id="1_mi701"]
+[ext_resource type="Texture2D" uid="uid://bcavtfkj1d8yu" path="res://assets/images/sprites/pink_robot_scared.png" id="2_1josp"]
+[ext_resource type="Script" uid="uid://cm232mgmnexbe" path="res://scenes/entities/robot/pink_robot/pink_robot.gd" id="2_4glwg"]
 [ext_resource type="Texture2D" uid="uid://ehyls1l1ddtd" path="res://assets/images/sprites/pink_robot.png" id="2_m5p7u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1josp"]
-size = Vector2(16, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr22e"]
+atlas = ExtResource("2_1josp")
+region = Rect2(0, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4fu5"]
+atlas = ExtResource("2_1josp")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2an2q"]
+atlas = ExtResource("2_1josp")
+region = Rect2(36, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4glwg"]
 atlas = ExtResource("2_m5p7u")
@@ -22,6 +33,20 @@ region = Rect2(36, 0, 18, 30)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kr22e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4fu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2an2q")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4glwg")
 }, {
 "duration": 1.0,
@@ -35,16 +60,29 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1josp"]
+size = Vector2(16, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4glwg"]
+size = Vector2(16, 30)
+
 [node name="Robot" instance=ExtResource("1_mi701")]
+script = ExtResource("2_4glwg")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." index="1"]
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="0"]
-position = Vector2(252, 120)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="0"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kr22e")
+animation = &"scared"
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" index="1"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" index="0"]
+scale = Vector2(5, 3)
 shape = SubResource("RectangleShape2D_1josp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
-texture_filter = 1
-position = Vector2(252, 120)
-sprite_frames = SubResource("SpriteFrames_kr22e")
-animation = &"walk"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="2"]
+shape = SubResource("RectangleShape2D_4glwg")
