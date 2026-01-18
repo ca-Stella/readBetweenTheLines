@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmlr1byd61u4c"]
+[gd_scene load_steps=5 format=3 uid="uid://cmlr1byd61u4c"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
-[ext_resource type="PackedScene" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
+[ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
+[ext_resource type="PackedScene" uid="uid://bn8p1gihlkk27" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
+[ext_resource type="PackedScene" uid="uid://7huukrp8bcut" path="res://scenes/game/store/store.tscn" id="3_vkcxy"]
 
 [node name="MainGame" type="Node"]
+script = ExtResource("1_087lc")
 
 [node name="World" parent="." instance=ExtResource("1_2vlba")]
 
 [node name="StatsScene" parent="World" instance=ExtResource("2_vkcxy")]
 size_flags_horizontal = 8
+
+[node name="Store" parent="." instance=ExtResource("3_vkcxy")]
+
+[connection signal="changeScenes" from="Store" to="." method="_on_store_change_scenes"]

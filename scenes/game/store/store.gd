@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal changeScenes
+
 var rng = RandomNumberGenerator.new()
 var headline1
 var headline2
@@ -85,4 +87,5 @@ func _process(delta: float) -> void:
 
 
 func _on_close_shop_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main-game.tscn")
+	#get_tree().change_scene_to_file("res://scenes/main-game.tscn")
+	emit_signal("changeScenes")
