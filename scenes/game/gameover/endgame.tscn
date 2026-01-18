@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx2owushgqb7m"]
+
+[ext_resource type="Script" uid="uid://bw20mdjlxgpqk" path="res://scenes/game/gameover/endgame.gd" id="1_8hsv0"]
+[ext_resource type="FontFile" uid="uid://bnn0x0n38ja6l" path="res://assets/fonts/GrapeSoda.ttf" id="2_ieyi5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qf042"]
+font = ExtResource("2_ieyi5")
+
+[node name="Endgame" type="Node2D"]
+script = ExtResource("1_8hsv0")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 229.0
+offset_top = 112.0
+offset_right = 269.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_qf042")

@@ -1,8 +1,20 @@
-[gd_scene format=3 uid="uid://cenm4w1h0dqbt"]
+[gd_scene load_steps=3 format=3 uid="uid://cenm4w1h0dqbt"]
+
+[ext_resource type="Script" uid="uid://b7a6bgnjxjxch" path="res://scenes/game/world/land/land.gd" id="1_mkula"]
+[ext_resource type="Texture2D" uid="uid://cf63x7rlami2l" path="res://assets/images/grass_background.png" id="2_mkula"]
 
 [node name="Land" type="CanvasLayer"]
+layer = -1
+script = ExtResource("1_mkula")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.6758592, 0.83075434, 0.8442495, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mkula")
