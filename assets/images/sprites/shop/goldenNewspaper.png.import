@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rsyhi80g8w3r"
-path="res://.godot/imported/goldenNewspaper.png-ec00f2671426c43959fe43478d37811b.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/images/sprites/shop/goldenNewspaper.png"
-dest_files=["res://.godot/imported/goldenNewspaper.png-ec00f2671426c43959fe43478d37811b.ctex"]
 
 [params]
 

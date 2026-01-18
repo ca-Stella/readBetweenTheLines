@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dju3askx17ikb"
-path="res://.godot/imported/choice_horizontal.png-1b620a4c37f2b4117f8e6137e8ef4dc3.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/images/newsletter/headlines/choice_horizontal.png"
-dest_files=["res://.godot/imported/choice_horizontal.png-1b620a4c37f2b4117f8e6137e8ef4dc3.ctex"]
 
 [params]
 
