@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://5hud7jfeovhv" path="res://assets/fonts/m5x7.ttf" id="2_cco2w"]
 [ext_resource type="Texture2D" uid="uid://dju3askx17ikb" path="res://assets/images/newsletter/headlines/choice_horizontal.png" id="2_feqra"]
 [ext_resource type="Texture2D" uid="uid://dcbercorkrk3k" path="res://assets/images/newsletter/headlines/choice_horizontal_active.png" id="3_feqra"]
-[ext_resource type="Texture2D" uid="uid://0ec23fvs3cy5" path="res://assets/images/newsletter/headlines/reroll_button_3.png" id="4_cco2w"]
+[ext_resource type="Texture2D" uid="uid://bv5wqxmqyyroh" path="res://assets/images/newsletter/headlines/reroll_button_2.png" id="5_crvaq"]
 [ext_resource type="Texture2D" uid="uid://dwae2p74ynrtw" path="res://assets/images/newsletter/headlines/reroll_button_2_hovered.png" id="6_tidhv"]
 [ext_resource type="Texture2D" uid="uid://bk1cac6qgpxe6" path="res://assets/images/newsletter/headlines/reroll_button_2_disabled.png" id="7_crvaq"]
 [ext_resource type="Script" uid="uid://smidu488nuh8" path="res://scenes/game/store/reroll.gd" id="8_crvaq"]
@@ -78,7 +78,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-texture_normal = ExtResource("4_cco2w")
+texture_normal = ExtResource("5_crvaq")
 texture_pressed = ExtResource("6_tidhv")
 texture_hover = ExtResource("6_tidhv")
 texture_disabled = ExtResource("7_crvaq")

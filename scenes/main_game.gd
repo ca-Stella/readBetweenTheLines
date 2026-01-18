@@ -24,3 +24,13 @@ func _on_headline_choice_headline_selected(data: Variant) -> void:
 
 func _on_store_update_stats(data: Variant) -> void:
 	pass # Replace with function body.
+
+
+func _on_button_pressed() -> void:
+	store_scene.visible = true
+	$World/StatsScene/VBoxContainer/Button.disabled=true
+
+
+
+func _on_close_shop_pressed() -> void:
+	$World/StatsScene/VBoxContainer/Button.disabled=false

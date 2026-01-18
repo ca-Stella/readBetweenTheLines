@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmlr1byd61u4c"]
+[gd_scene load_steps=10 format=3 uid="uid://cmlr1byd61u4c"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
-[ext_resource type="Script" path="res://scenes/main_game.gd" id="1_087lc"]
+[ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
 [ext_resource type="PackedScene" uid="uid://bn8p1gihlkk27" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
 [ext_resource type="PackedScene" uid="uid://7huukrp8bcut" path="res://scenes/game/store/store.tscn" id="3_vkcxy"]
-[ext_resource type="Script" path="res://scenes/game/stats/stats_scene.gd" id="4_bxljq"]
+[ext_resource type="Script" uid="uid://cwpxmt2dhhohr" path="res://scenes/game/stats/stats_scene.gd" id="4_bxljq"]
+[ext_resource type="Texture2D" uid="uid://do2vx0i8uy3y1" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_hover.png" id="5_ebdxb"]
+[ext_resource type="Texture2D" uid="uid://c7lgipyqoclfw" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_disabled.png" id="6_vl07w"]
 [ext_resource type="Texture2D" uid="uid://blkguohv5lvkq" path="res://assets/images/newsletter/headlines/close_hovered.png" id="6_w232t"]
+[ext_resource type="Texture2D" uid="uid://duchfpx1di03w" path="res://assets/images/newsletter/store_box.png" id="6_xrv8w"]
 
 [node name="MainGame" type="Node"]
 script = ExtResource("1_087lc")
@@ -16,16 +19,37 @@ script = ExtResource("1_087lc")
 size_flags_horizontal = 8
 script = ExtResource("4_bxljq")
 
+[node name="ColorRect" parent="World/StatsScene" index="0"]
+offset_left = -120.0
+offset_bottom = -169.0
+
+[node name="Space" parent="World/StatsScene/VBoxContainer/VBoxContainer" index="6"]
+theme_override_font_sizes/font_size = 5
+
+[node name="Button" parent="World/StatsScene/VBoxContainer" index="2"]
+toggle_mode = true
+texture_pressed = ExtResource("5_ebdxb")
+texture_hover = ExtResource("5_ebdxb")
+texture_disabled = ExtResource("6_vl07w")
+
+[node name="Space" parent="World/StatsScene/VBoxContainer" index="3"]
+theme_override_font_sizes/font_size = 2
+
 [node name="Store" parent="." instance=ExtResource("3_vkcxy")]
 
 [node name="ColorRect" parent="Store" index="0"]
 offset_left = 30.0
 offset_top = 30.0
-offset_right = -160.0
+offset_right = -150.0
 offset_bottom = -30.0
+texture = ExtResource("6_xrv8w")
 
 [node name="HBoxContainer" parent="Store/ColorRect" index="0"]
-offset_right = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 8.0
+offset_bottom = -3.0
+theme_override_constants/separation = 4
 
 [node name="CloseShop" parent="Store/ColorRect/HBoxContainer" index="0"]
 texture_pressed = ExtResource("6_w232t")
@@ -34,7 +58,11 @@ texture_hover = ExtResource("6_w232t")
 [node name="VBoxContainer" parent="Store/ColorRect/HBoxContainer" index="1"]
 theme_override_constants/separation = 14
 
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="shop_closed" from="Store" to="." method="_on_store_shop_closed"]
 [connection signal="update_stats" from="Store" to="." method="_on_store_update_stats"]
+[connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="." method="_on_close_shop_pressed"]
+[connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="World/StatsScene" method="_on_close_shop_pressed"]
 
+[editable path="World/StatsScene"]
 [editable path="Store"]

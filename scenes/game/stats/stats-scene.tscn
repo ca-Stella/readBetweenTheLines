@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdh18q3xcsky6"]
+[gd_scene load_steps=13 format=3 uid="uid://bn8p1gihlkk27"]
 
-[ext_resource type="FontFile" uid="uid://c0875f21ekqxv" path="res://assets/fonts/GrapeSoda.ttf" id="1_7y7b7"]
+[ext_resource type="FontFile" uid="uid://b4innq8v5r3ri" path="res://assets/fonts/GrapeSoda.ttf" id="1_7y7b7"]
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="1_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://c8srtfhb8h4cb" path="res://assets/images/sprites/hp_stats/blueRep.png" id="2_i1q70"]
+[ext_resource type="FontFile" uid="uid://5hud7jfeovhv" path="res://assets/fonts/m5x7.ttf" id="2_n30jr"]
 [ext_resource type="Texture2D" uid="uid://dvj0kg0a77nms" path="res://assets/images/sprites/hp_stats/pinkRep.png" id="2_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://ovq0mwynacn5" path="res://assets/images/sprites/hp_stats/greenRep.png" id="3_fkico"]
 [ext_resource type="Texture2D" uid="uid://bk1b4f080apnf" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON.png" id="5_i1q70"]
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
+color = Color(0.8817278, 0.90242225, 0.8226741, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(120, 0)
@@ -36,6 +38,7 @@ layout_mode = 0
 offset_left = 360.0
 offset_right = 480.0
 offset_bottom = 270.0
+theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -47,7 +50,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("1_7y7b7")
 theme_override_font_sizes/font_size = 18
-text = "  Stats:"
+text = "  Stats "
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -74,8 +77,9 @@ theme_override_constants/separation = 1
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 6
-text = "Reputation for Blue:"
+theme_override_fonts/font = ExtResource("2_n30jr")
+theme_override_font_sizes/font_size = 11
+text = "Reputation for Blue"
 
 [node name="Blue" type="TextureProgressBar" parent="VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 13)
@@ -87,7 +91,8 @@ texture_progress = ExtResource("2_i1q70")
 [node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 6
+theme_override_fonts/font = ExtResource("2_n30jr")
+theme_override_font_sizes/font_size = 11
 text = "Reputation for Green"
 
 [node name="Green" type="TextureProgressBar" parent="VBoxContainer/VBoxContainer"]
@@ -100,8 +105,9 @@ texture_progress = ExtResource("3_fkico")
 [node name="Label3" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 6
-text = "Reputation for Pink:"
+theme_override_fonts/font = ExtResource("2_n30jr")
+theme_override_font_sizes/font_size = 11
+text = "Reputation for Pink"
 
 [node name="Pink" type="TextureProgressBar" parent="VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 13)
@@ -110,10 +116,18 @@ value = 75.0
 texture_under = ExtResource("1_qv2bp")
 texture_progress = ExtResource("2_qv2bp")
 
+[node name="Space" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+
 [node name="Button" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_i1q70")
+
+[node name="Space" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
