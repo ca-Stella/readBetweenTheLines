@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8srtfhb8h4cb"
-path="res://.godot/imported/blueRep.png-a8ec8b3926718129eefcc0ae6d3ca203.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/images/sprites/hp_stats/blueRep.png"
-dest_files=["res://.godot/imported/blueRep.png-a8ec8b3926718129eefcc0ae6d3ca203.ctex"]
 
 [params]
 

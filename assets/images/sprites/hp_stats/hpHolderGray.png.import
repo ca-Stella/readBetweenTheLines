@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0bwq5o2a6ecf"
-path="res://.godot/imported/hpHolderGray.png-a7bbc2ca331bb4ef1ecca2a218cb8a67.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/images/sprites/hp_stats/hpHolderGray.png"
-dest_files=["res://.godot/imported/hpHolderGray.png-a7bbc2ca331bb4ef1ecca2a218cb8a67.ctex"]
 
 [params]
 
