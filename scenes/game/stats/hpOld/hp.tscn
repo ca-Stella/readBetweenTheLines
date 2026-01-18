@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://v6pnldovg5yx"]
+
+[ext_resource type="Script" uid="uid://dmac83qlrl2x7" path="res://scenes/game/stats/hpOld/hp.gd" id="1_tewox"]
+[ext_resource type="Texture2D" uid="uid://c7mr2hqobq0i5" path="res://assets/images/sprites/hp_stats/hpHolderbrown.png" id="2_twmwo"]
+[ext_resource type="Texture2D" uid="uid://n41yvh8wf0aa" path="res://assets/images/sprites/hp_stats/hpProgress.png" id="3_wrvsg"]
+[ext_resource type="Script" uid="uid://vf6bcogptpha" path="res://scenes/game/stats/hpOld/progress_bar.gd" id="4_13qmd"]
+
+[node name="Hp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tewox")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_bottom = 18.0
+grow_horizontal = 0
+value = 69.0
+texture_under = ExtResource("2_twmwo")
+texture_progress = ExtResource("3_wrvsg")
+script = ExtResource("4_13qmd")
