@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://0xi34pok0cib" path="res://scenes/game/world/world.gd" id="1_lejwd"]
 
-[node name="World" type="Node2D"]
+[node name="World" type="CanvasLayer"]
 script = ExtResource("1_lejwd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.8378395, 0.69601846, 0.6556223, 1)

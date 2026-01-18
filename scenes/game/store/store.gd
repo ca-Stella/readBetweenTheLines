@@ -73,7 +73,6 @@ func _ready() -> void:
 
 # Function to get random items from the dictionary
 func get_random_headlines(dict: Dictionary, count: int) -> Array:
-
 	var keys = dict.keys()
 	keys.shuffle()
 	var random_keys = keys.slice(0, 3)
@@ -83,3 +82,7 @@ func get_random_headlines(dict: Dictionary, count: int) -> Array:
 func _process(delta: float) -> void:
 	pass
 	
+
+
+func _on_close_shop_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main-game.tscn")

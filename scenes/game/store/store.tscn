@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7huukrp8bcut"]
+[gd_scene load_steps=3 format=3 uid="uid://7huukrp8bcut"]
 
 [ext_resource type="Script" uid="uid://c5l7hkyurudw5" path="res://scenes/game/store/store.gd" id="1_b3ned"]
+[ext_resource type="Texture2D" uid="uid://bipreu7t3l0ff" path="res://assets/images/newsletter/headlines/close.png" id="2_27bpi"]
 
 [node name="Store" type="CanvasLayer"]
 script = ExtResource("1_b3ned")
@@ -22,3 +23,9 @@ offset_bottom = 253.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
+
+[node name="CloseShop" type="TextureButton" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_27bpi")
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/CloseShop" to="." method="_on_close_shop_pressed"]

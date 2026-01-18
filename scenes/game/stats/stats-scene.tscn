@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddfnil8pfmhk"]
+[gd_scene load_steps=5 format=3 uid="uid://bn8p1gihlkk27"]
 
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="1_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://c8srtfhb8h4cb" path="res://assets/images/sprites/hp_stats/blueRep.png" id="2_i1q70"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmlr1byd61u4c"]
+
+[ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
+[ext_resource type="PackedScene" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
+
+[node name="MainGame" type="Node"]
+
+[node name="World" parent="." instance=ExtResource("1_2vlba")]
+
+[node name="StatsScene" parent="World" instance=ExtResource("2_vkcxy")]
+size_flags_horizontal = 8
