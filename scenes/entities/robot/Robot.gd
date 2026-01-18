@@ -25,10 +25,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if reputation < 50:
+	if reputation < 25:
 		is_mad = true
 	else:
 		is_mad = false
+	if self.colour == "blue":
+		reputation = self.get_parent().get_parent().blue
+		print("blue rep",reputation)
+	elif self.colour == "green":
+		reputation = self.get_parent().get_parent().green
+		print("green rep",reputation)
+	elif self.colour == "pink":
+		reputation = self.get_parent().get_parent().pink
+		print("pink rep",reputation)
 	
 func _physics_process(delta: float) -> void:
 	if is_scared:
@@ -48,11 +57,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			is_scared = false
 	elif is_mad:
-		if is_walking:
-			velocity = direction * speed
-			sprite.play("mad")
-		else:
-			sprite.stop()
+		velocity = direction * speed
+		sprite.play("mad")
 	elif is_walking:
 		velocity = direction * speed
 		sprite.play("walk")
@@ -95,5 +101,5 @@ func change_rep(value):
 	
 func _on_area_entered(body):
 	if body.get_parent().colour != colour:
-		if body.get_parent().reputation < 50:
+		if body.get_parent().reputation < 25:
 			is_scared = true
