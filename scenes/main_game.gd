@@ -22,9 +22,6 @@ func _on_headline_choice_headline_selected(data: Variant) -> void:
 	print("select select update update")
 
 
-func _on_store_update_stats(data: Variant) -> void:
-	pass # Replace with function body.
-
 
 func _on_button_pressed() -> void:
 	store_scene.setup()
