@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://bn8p1gihlkk27"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://ddfnil8pfmhk"]
+>>>>>>> origin/hp
 
 [ext_resource type="Script" uid="uid://cwpxmt2dhhohr" path="res://scenes/game/stats/stats_scene.gd" id="1_i1q70"]
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="1_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://c8srtfhb8h4cb" path="res://assets/images/sprites/hp_stats/blueRep.png" id="2_i1q70"]
 [ext_resource type="Texture2D" uid="uid://dvj0kg0a77nms" path="res://assets/images/sprites/hp_stats/pinkRep.png" id="2_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://ovq0mwynacn5" path="res://assets/images/sprites/hp_stats/greenRep.png" id="3_fkico"]
+[ext_resource type="Texture2D" uid="uid://bk1b4f080apnf" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON.png" id="5_i1q70"]
 
 [node name="StatsScene" type="Control"]
 layout_mode = 3
@@ -83,3 +88,8 @@ layout_mode = 2
 value = 75.0
 texture_under = ExtResource("1_qv2bp")
 texture_progress = ExtResource("2_qv2bp")
+
+[node name="Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_i1q70")
