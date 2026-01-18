@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n41yvh8wf0aa"
-path="res://.godot/imported/hpProgress.png-fbf23e19e4cc1543f882f854391ad62c.ctex"
+uid="uid://c7mr2hqobq0i5"
+path="res://.godot/imported/hpHolderbrown.png-20a66e41be77f1dbf52e5cd36ee76579.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/hp/hpProgress.png"
-dest_files=["res://.godot/imported/hpProgress.png-fbf23e19e4cc1543f882f854391ad62c.ctex"]
+source_file="res://assets/images/sprites/hp_stats/hpHolderbrown.png"
+dest_files=["res://.godot/imported/hpHolderbrown.png-20a66e41be77f1dbf52e5cd36ee76579.ctex"]
 
 [params]
 

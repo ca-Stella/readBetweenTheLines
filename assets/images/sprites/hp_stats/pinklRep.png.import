@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0bwq5o2a6ecf"
-path="res://.godot/imported/hpHolderGray.png-39de92ed1c93f8f328a83d7033f82d87.ctex"
+uid="uid://dl4sl3j7xvwmh"
+path="res://.godot/imported/pinklRep.png-4539b893f021b417e95c0b4541fe16fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/hp/hpHolderGray.png"
-dest_files=["res://.godot/imported/hpHolderGray.png-39de92ed1c93f8f328a83d7033f82d87.ctex"]
+source_file="res://assets/images/sprites/hp_stats/pinklRep.png"
+dest_files=["res://.godot/imported/pinklRep.png-4539b893f021b417e95c0b4541fe16fd.ctex"]
 
 [params]
 
