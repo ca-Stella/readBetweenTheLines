@@ -20,10 +20,8 @@ signal headline_selected(data)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	cost_label = $Information/CostLabel
+	cost_label = $Information/HBoxContainer/CostLabel
 	headline_label = $Information/HeadlineLabel
-	print("Information node:", $Information) 
-	print("CostLabel node:", $Information/CostLabel)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -64,5 +62,5 @@ func _on_reroll_pressed() -> void:
 
 		
 func update_scene() -> void: 
-	$Information/CostLabel.text = str(self.cost)
+	$Information/HBoxContainer/CostLabel.text = str(self.cost)
 	$Information/HeadlineLabel.text = str(self.headline)
