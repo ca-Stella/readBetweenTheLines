@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddfnil8pfmhk"]
+[gd_scene load_steps=7 format=3 uid="uid://cdh18q3xcsky6"]
 
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="1_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://c8srtfhb8h4cb" path="res://assets/images/sprites/hp_stats/blueRep.png" id="2_i1q70"]
 [ext_resource type="Texture2D" uid="uid://dvj0kg0a77nms" path="res://assets/images/sprites/hp_stats/pinkRep.png" id="2_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://ovq0mwynacn5" path="res://assets/images/sprites/hp_stats/greenRep.png" id="3_fkico"]
 [ext_resource type="Texture2D" uid="uid://bk1b4f080apnf" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON.png" id="5_i1q70"]
+[ext_resource type="Texture2D" uid="uid://ddpxmj0cn2yt1" path="res://assets/images/sprites/hp_stats/shop.png" id="6_fkico"]
 
 [node name="StatsScene" type="Control"]
 layout_mode = 3
@@ -13,7 +14,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(120, 0)
@@ -32,11 +32,29 @@ offset_left = 360.0
 offset_right = 480.0
 offset_bottom = 66.0
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 13
-text = "Stats:"
+text = "  Stats:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "        "
+
+[node name="Money" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.5411765, 0.6901961, 0.3764706, 1)
+theme_override_colors/font_shadow_color = Color(0.36300355, 0.47612607, 0.23468116, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 13
+text = "$ ..."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -87,3 +105,10 @@ texture_progress = ExtResource("2_qv2bp")
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_i1q70")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("6_fkico")
