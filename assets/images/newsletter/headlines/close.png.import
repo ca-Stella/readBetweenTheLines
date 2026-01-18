@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bipreu7t3l0ff"
-path="res://.godot/imported/close.png-ee1a576c5e97e220e39aa64c2c66b995.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/images/newsletter/headlines/close.png"
-dest_files=["res://.godot/imported/close.png-ee1a576c5e97e220e39aa64c2c66b995.ctex"]
 
 [params]
 

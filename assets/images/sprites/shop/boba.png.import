@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx45flhg4t40t"
-path="res://.godot/imported/boba.png-398372800fc2d7f46051139f6d2a148a.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/images/sprites/shop/boba.png"
-dest_files=["res://.godot/imported/boba.png-398372800fc2d7f46051139f6d2a148a.ctex"]
 
 [params]
 
