@@ -1,21 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://cary8lex75lvy"]
 
 [ext_resource type="Script" uid="uid://uhna1ulsjs3x" path="res://scenes/game/store/headline_choice.gd" id="1_feqra"]
-[ext_resource type="Texture2D" uid="uid://ccx0qia7vecq6" path="res://assets/images/newsletter/headlines/choice_box.png" id="1_vteu3"]
 [ext_resource type="FontFile" uid="uid://5hud7jfeovhv" path="res://assets/fonts/m5x7.ttf" id="2_cco2w"]
+[ext_resource type="Texture2D" uid="uid://dju3askx17ikb" path="res://assets/images/newsletter/headlines/choice_horizontal.png" id="2_feqra"]
 [ext_resource type="Texture2D" uid="uid://52j7xydfxtkf" path="res://assets/images/newsletter/headlines/reroll_button.png" id="2_jjlct"]
 
-[node name="HeadlineChoice" type="VBoxContainer"]
-anchors_preset = 8
-anchor_left = 0.5
+[node name="HeadlineChoice" type="HBoxContainer"]
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
 offset_top = -82.0
-offset_right = 50.0
+offset_right = 376.0
 offset_bottom = 82.0
-grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -25,24 +21,26 @@ script = ExtResource("1_feqra")
 
 [node name="Information" type="TextureButton" parent="."]
 layout_mode = 2
-texture_normal = ExtResource("1_vteu3")
+size_flags_vertical = 4
+texture_normal = ExtResource("2_feqra")
 
 [node name="CostLabel" type="Label" parent="Information"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 13.0
-offset_top = 2.5
-offset_right = 50.0
-offset_bottom = 28.5
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 58.0
+offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("2_cco2w")
 theme_override_font_sizes/font_size = 32
-text = "$ 0"
+text = "$0"
 
 [node name="HeadlineLabel" type="Label" parent="Information"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 53.0
-offset_right = 93.0
-offset_bottom = 153.0
+offset_left = 74.0
+offset_top = 5.0
+offset_right = 281.0
+offset_bottom = 57.0
 theme_override_fonts/font = ExtResource("2_cco2w")
 theme_override_font_sizes/font_size = 16
 text = "Red robots killed everyone :o"
@@ -52,6 +50,7 @@ autowrap_mode = 2
 [node name="Reroll" type="TextureButton" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("2_jjlct")
 
 [connection signal="pressed" from="Information" to="." method="_on_information_pressed"]
