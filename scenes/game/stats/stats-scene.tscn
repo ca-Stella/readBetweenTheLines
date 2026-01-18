@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="1_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://c8srtfhb8h4cb" path="res://assets/images/sprites/hp_stats/blueRep.png" id="2_i1q70"]
+[ext_resource type="Texture2D" uid="uid://dvj0kg0a77nms" path="res://assets/images/sprites/hp_stats/pinkRep.png" id="2_qv2bp"]
 [ext_resource type="Texture2D" uid="uid://ovq0mwynacn5" path="res://assets/images/sprites/hp_stats/greenRep.png" id="3_fkico"]
-[ext_resource type="Texture2D" uid="uid://dl4sl3j7xvwmh" path="res://assets/images/sprites/hp_stats/pinklRep.png" id="4_7y7b7"]
 
 [node name="StatsScene" type="Control"]
 layout_mode = 3
@@ -29,27 +29,55 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 0
 offset_left = 360.0
 offset_right = 480.0
-offset_bottom = 63.0
+offset_bottom = 66.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
 text = "Stats:"
 
-[node name="Blue" type="TextureProgressBar" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "Reputation for Blue:"
+
+[node name="Blue" type="TextureProgressBar" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 13)
 layout_mode = 2
 value = 75.0
 texture_under = ExtResource("1_qv2bp")
 texture_progress = ExtResource("2_i1q70")
 
-[node name="Green" type="TextureProgressBar" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "Reputation for Green"
+
+[node name="Green" type="TextureProgressBar" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 13)
 layout_mode = 2
 value = 75.0
 texture_under = ExtResource("1_qv2bp")
 texture_progress = ExtResource("3_fkico")
 
-[node name="Pink" type="TextureProgressBar" parent="VBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "Reputation for Pink:"
+
+[node name="Pink" type="TextureProgressBar" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 13)
 layout_mode = 2
 value = 75.0
 texture_under = ExtResource("1_qv2bp")
-texture_progress = ExtResource("4_7y7b7")
+texture_progress = ExtResource("2_qv2bp")
