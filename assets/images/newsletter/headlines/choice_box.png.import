@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccx0qia7vecq6"
-valid=false
+path="res://.godot/imported/choice_box.png-d8f64cb26cf28cacf9610cb563c16c0e.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/newsletter/headlines/choice_box.png"
+dest_files=["res://.godot/imported/choice_box.png-d8f64cb26cf28cacf9610cb563c16c0e.ctex"]
 
 [params]
 

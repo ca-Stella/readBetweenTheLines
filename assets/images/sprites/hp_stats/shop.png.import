@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddpxmj0cn2yt1"
-valid=false
+path="res://.godot/imported/shop.png-c52443a9e172fd353753be8900a401fd.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/sprites/hp_stats/shop.png"
+dest_files=["res://.godot/imported/shop.png-c52443a9e172fd353753be8900a401fd.ctex"]
 
 [params]
 

@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk1b4f080apnf"
-valid=false
+path="res://.godot/imported/PUBLISHBUTTON.png-afc1f9ca945d4f1d3efaa33485b3831e.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/images/sprites/hp_stats/PUBLISHBUTTON.png"
+dest_files=["res://.godot/imported/PUBLISHBUTTON.png-afc1f9ca945d4f1d3efaa33485b3831e.ctex"]
 
 [params]
 
