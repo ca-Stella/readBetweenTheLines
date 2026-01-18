@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdh18q3xcsky6"]
+[gd_scene load_steps=12 format=3 uid="uid://cdh18q3xcsky6"]
 
 [ext_resource type="FontFile" uid="uid://c0875f21ekqxv" path="res://assets/fonts/GrapeSoda.ttf" id="1_7y7b7"]
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="1_qv2bp"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ddpxmj0cn2yt1" path="res://assets/images/sprites/hp_stats/shop.png" id="6_fkico"]
 [ext_resource type="Texture2D" uid="uid://rsyhi80g8w3r" path="res://assets/images/sprites/shop/goldenNewspaper.png" id="8_yh1ei"]
 [ext_resource type="Texture2D" uid="uid://cx45flhg4t40t" path="res://assets/images/sprites/shop/boba.png" id="9_m0ggt"]
+[ext_resource type="Texture2D" uid="uid://l1kvq6xfnd3i" path="res://assets/images/sprites/shop/school.png" id="10_8ygfr"]
+[ext_resource type="Texture2D" uid="uid://ef3nqvm6hjn" path="res://assets/images/sprites/shop/park.png" id="11_5muv1"]
 
 [node name="StatsScene" type="Control"]
 layout_mode = 3
@@ -113,6 +115,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_i1q70")
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.79836637, 0.7983663, 0.7983663, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("1_7y7b7")
+theme_override_font_sizes/font_size = 12
+text = "Shop :3"
+horizontal_alignment = 1
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -127,7 +140,7 @@ offset_top = 34.0
 offset_right = 39.0
 offset_bottom = 39.0
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+[node name="GNewsButton" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
 layout_mode = 0
 offset_left = -1.0
 offset_top = -24.0
@@ -153,28 +166,79 @@ offset_bottom = 10.0
 theme_override_font_sizes/font_size = 3
 text = "Golden Newspapers"
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+[node name="BobaButton" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 11.0
-offset_right = 63.0
-offset_bottom = 41.0
+offset_left = 69.0
+offset_top = -24.0
+offset_right = 99.0
+offset_bottom = 6.0
 texture_normal = ExtResource("9_m0ggt")
 
 [node name="BobaPrice" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 64.0
-offset_bottom = 41.0
+offset_left = 73.0
+offset_top = -1.0
+offset_right = 101.0
+offset_bottom = 6.0
 theme_override_font_sizes/font_size = 4
 text = "$ 1000 "
 
 [node name="BobaDesc" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 41.0
-offset_right = 74.0
-offset_bottom = 46.0
+offset_left = 71.0
+offset_top = 5.0
+offset_right = 111.0
+offset_bottom = 10.0
 theme_override_font_sizes/font_size = 3
 text = "Boba Machine"
+
+[node name="SchoolButton" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -24.0
+offset_right = 63.0
+offset_bottom = 6.0
+texture_normal = ExtResource("10_8ygfr")
+
+[node name="SchoolPrice" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -1.0
+offset_right = 64.0
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 4
+text = "$ 1000 "
+
+[node name="SchoolDesc" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 5.0
+offset_right = 75.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 3
+text = "Build a University"
+
+[node name="ParkButton" type="TextureButton" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 11.0
+offset_right = 29.0
+offset_bottom = 41.0
+texture_normal = ExtResource("11_5muv1")
+
+[node name="ParkPrice" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 29.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 4
+text = "$ 1000 "
+
+[node name="ParkDesc" type="Label" parent="VBoxContainer/VBoxContainer2/TextureRect/Control"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 3
+text = "Green Space"
