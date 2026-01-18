@@ -264,3 +264,7 @@ func unselectAll() -> void :
 	$ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice.unselect()
 	$ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice2.unselect()
 	$ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice3.unselect()
+
+
+func _on_texture_button_pressed() -> void:
+	emit_signal("shop_closed")

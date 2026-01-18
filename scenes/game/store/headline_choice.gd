@@ -52,6 +52,7 @@ func _on_information_pressed() -> void:
 		"green_rep": self.green_rep, 
 	})
 	
+	
 func _on_reroll_pressed() -> void:
 	self.cost = rolled_headline_info["cost"]
 	self.headline = rolled_headline_info["text"]
@@ -68,3 +69,11 @@ func update_scene() -> void:
 func unselect() -> void : 
 	$Information.button_pressed = false
 	$Reroll.button_pressed = false
+
+func disable() -> void : 
+	$Information.disabled = true
+	$Reroll.disabled = true
+
+func enable() -> void: 
+	$Information.disabled = false
+	$Reroll.disabled = false
