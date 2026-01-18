@@ -1,6 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://7huukrp8bcut"]
+[gd_scene load_steps=4 format=3 uid="uid://7huukrp8bcut"]
 
 [ext_resource type="Script" uid="uid://c5l7hkyurudw5" path="res://scenes/game/store/store.gd" id="1_b3ned"]
+[ext_resource type="Texture2D" uid="uid://bipreu7t3l0ff" path="res://assets/images/newsletter/headlines/close.png" id="2_27bpi"]
+[ext_resource type="PackedScene" uid="uid://cary8lex75lvy" path="res://scenes/game/store/headline_choice.tscn" id="3_xws8k"]
 
 [node name="Store" type="CanvasLayer"]
 script = ExtResource("1_b3ned")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseShop" type="TextureButton" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_27bpi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="HeadlineChoice" parent="ColorRect/HBoxContainer/VBoxContainer" instance=ExtResource("3_xws8k")]
+layout_mode = 2
+
+[node name="HeadlineChoice2" parent="ColorRect/HBoxContainer/VBoxContainer" instance=ExtResource("3_xws8k")]
+layout_mode = 2
+
+[node name="HeadlineChoice3" parent="ColorRect/HBoxContainer/VBoxContainer" instance=ExtResource("3_xws8k")]
+layout_mode = 2
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/CloseShop" to="." method="_on_close_shop_pressed"]
+[connection signal="headline_selected" from="ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice" to="." method="_on_headline_choice_headline_selected"]
+[connection signal="headline_selected" from="ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice2" to="." method="_on_headline_choice_2_headline_selected"]
+[connection signal="headline_selected" from="ColorRect/HBoxContainer/VBoxContainer/HeadlineChoice3" to="." method="_on_headline_choice_3_headline_selected"]
