@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
 [ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
-[ext_resource type="PackedScene" uid="uid://bn8p1gihlkk27" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
+[ext_resource type="PackedScene" uid="uid://cdh18q3xcsky6" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
 [ext_resource type="PackedScene" uid="uid://7huukrp8bcut" path="res://scenes/game/store/store.tscn" id="3_vkcxy"]
 [ext_resource type="Script" uid="uid://cwpxmt2dhhohr" path="res://scenes/game/stats/stats_scene.gd" id="4_bxljq"]
 
@@ -15,9 +15,35 @@ script = ExtResource("1_087lc")
 size_flags_horizontal = 8
 script = ExtResource("4_bxljq")
 
+[node name="VBoxContainer" parent="World/StatsScene" index="1"]
+theme_override_constants/separation = 4
+
+[node name="Label2" parent="World/StatsScene/VBoxContainer/HBoxContainer" index="1"]
+theme_override_colors/font_color = Color(0.5411765, 0.6901961, 0.3764706, 1)
+theme_override_colors/font_shadow_color = Color(0.3647059, 0.4745098, 0.23529412, 1)
+theme_override_font_sizes/font_size = 14
+text = "      $"
+
+[node name="Money" parent="World/StatsScene/VBoxContainer/HBoxContainer" index="2"]
+text = "8000"
+
+[node name="Blue" parent="World/StatsScene/VBoxContainer/VBoxContainer" index="1"]
+value = 50.0
+
+[node name="Green" parent="World/StatsScene/VBoxContainer/VBoxContainer" index="3"]
+value = 50.0
+
+[node name="Pink" parent="World/StatsScene/VBoxContainer/VBoxContainer" index="5"]
+value = 50.0
+
 [node name="Store" parent="." instance=ExtResource("3_vkcxy")]
 
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/GNewsButton" to="." method="_on_g_news_button_pressed"]
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/BobaButton" to="." method="_on_boba_button_pressed"]
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/SchoolButton" to="." method="_on_school_button_pressed"]
+[connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/ParkButton" to="." method="_on_park_button_pressed"]
 [connection signal="shop_closed" from="Store" to="." method="_on_store_shop_closed"]
 [connection signal="update_stats" from="Store" to="." method="_on_store_update_stats"]
 
+[editable path="World/StatsScene"]
 [editable path="Store"]
