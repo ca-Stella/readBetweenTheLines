@@ -8,8 +8,9 @@ var velocity = Vector2.ZERO
 @onready var sprite = $"CharacterBody2D/AnimatedSprite2D"
 @onready var collision_area = $"CharacterBody2D/Area2D"
 var speed = 40
-var reputation = 0
+var reputation = 50
 var is_scared = false
+var is_mad = false
 var colour = ""
 
 # Called when the node enters the scene tree for the first time.
@@ -24,23 +25,34 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if reputation < 50:
+		is_mad = true
+	else:
+		is_mad = false
 	
 func _physics_process(delta: float) -> void:
 	if is_scared:
-		var nearest_scare = null
+		var flee_vector = Vector2.ZERO
+		var scare_detected = false
 		for body in collision_area.get_overlapping_bodies():
-			if body.get_parent().colour != colour and body.get_parent().reputation < 50:
-				nearest_scare = body
-				break
-		if nearest_scare != null:
-			direction = (position - nearest_scare.position).normalized()
-			velocity = direction * speed
+			var parent = body.get_parent()
+			if parent.colour != colour and parent.reputation < 50:
+				flee_vector += (position - parent.position)
+				scare_detected = true
+		if scare_detected:
+			is_scared = true
+			direction = flee_vector.normalized()
 			sprite.play("scared")
 			if direction.x != 0:
 				sprite.flip_h = direction.x < 0
 		else:
 			is_scared = false
+	elif is_mad:
+		if is_walking:
+			velocity = direction * speed
+			sprite.play("mad")
+		else:
+			sprite.stop()
 	elif is_walking:
 		velocity = direction * speed
 		sprite.play("walk")
@@ -48,17 +60,19 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		sprite.stop()
 		
-	position += velocity * delta
 	if position.x <= 16 and direction.x < 0:
-		direction.x = -direction.x
+		direction.x = max(direction.x, 0)
 		sprite.flip_h = direction.x < 0
 	if position.x >= 334 and direction.x > 0:
-		direction.x = -direction.x
+		direction.x = min(direction.x, 0)
 		sprite.flip_h = direction.x < 0
 	if position.y <= 9 and direction.y < 0:
-		direction.y = -direction.y
+		direction.y = max(direction.y, 0)
 	if position.y >= 261 and direction.y > 0:
-		direction.y = -direction.y
+		direction.y = min(direction.y, 0)
+	
+	velocity = direction * speed
+	position += velocity * delta
 
 func _on_timer_timeout() -> void:
 	if is_scared:

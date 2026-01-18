@@ -21,7 +21,7 @@ func new_game():
 #	$StartTimer.start()
 
 func spawn_robots():
-	for i in range(3):
+	for i in range(7):
 		var robot = blue_robot.instantiate()
 		add_child(robot)
 		robot = pink_robot.instantiate()

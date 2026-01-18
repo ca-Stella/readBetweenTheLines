@@ -1,9 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://b08choopv6swg"]
+[gd_scene load_steps=18 format=3 uid="uid://b08choopv6swg"]
 
 [ext_resource type="PackedScene" uid="uid://d14awcgysjd7v" path="res://scenes/entities/robot/robot.tscn" id="1_mi701"]
 [ext_resource type="Texture2D" uid="uid://bcavtfkj1d8yu" path="res://assets/images/sprites/pink_robot_scared.png" id="2_1josp"]
 [ext_resource type="Script" uid="uid://cm232mgmnexbe" path="res://scenes/entities/robot/pink_robot/pink_robot.gd" id="2_4glwg"]
 [ext_resource type="Texture2D" uid="uid://ehyls1l1ddtd" path="res://assets/images/sprites/pink_robot.png" id="2_m5p7u"]
+[ext_resource type="Texture2D" uid="uid://bpbqrhfa1sdin" path="res://assets/images/sprites/pink_robot_mad.png" id="3_gletr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvhyf"]
+atlas = ExtResource("3_gletr")
+region = Rect2(0, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyqq1"]
+atlas = ExtResource("3_gletr")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6nu5"]
+atlas = ExtResource("3_gletr")
+region = Rect2(36, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kr22e"]
 atlas = ExtResource("2_1josp")
@@ -31,6 +44,20 @@ region = Rect2(36, 0, 18, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kr22e"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvhyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyqq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6nu5")
+}],
+"loop": true,
+"name": &"mad",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kr22e")
@@ -75,13 +102,13 @@ collision_mask = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kr22e")
-animation = &"scared"
+animation = &"mad"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" index="1"]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" index="0"]
-scale = Vector2(5, 3)
+scale = Vector2(7, 4)
 shape = SubResource("RectangleShape2D_1josp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="2"]

@@ -1,12 +1,29 @@
-[gd_scene load_steps=16 format=3 uid="uid://cp1xl63bj3whe"]
+[gd_scene load_steps=21 format=3 uid="uid://cp1xl63bj3whe"]
 
 [ext_resource type="Script" uid="uid://5nsse3q1e2jm" path="res://scenes/entities/robot/blue_robot/blue_robot.gd" id="1_mksat"]
 [ext_resource type="PackedScene" uid="uid://d14awcgysjd7v" path="res://scenes/entities/robot/robot.tscn" id="1_pqa1b"]
 [ext_resource type="Texture2D" uid="uid://bcrrew6ytijua" path="res://assets/images/sprites/blue_robot1.png" id="2_llhty"]
+[ext_resource type="Texture2D" uid="uid://budpw8koqwvaq" path="res://assets/images/sprites/blue_robot_mad.png" id="3_qcdjx"]
 [ext_resource type="Texture2D" uid="uid://pnwlqiveem0e" path="res://assets/images/sprites/blue_robot_scared-export.png" id="3_s6xeq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs5ih"]
 size = Vector2(14, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exyix"]
+atlas = ExtResource("3_qcdjx")
+region = Rect2(0, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idbr5"]
+atlas = ExtResource("3_qcdjx")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6efph"]
+atlas = ExtResource("3_qcdjx")
+region = Rect2(36, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wquv1"]
+atlas = ExtResource("3_qcdjx")
+region = Rect2(54, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w8ada"]
 atlas = ExtResource("3_s6xeq")
@@ -42,6 +59,23 @@ region = Rect2(54, 0, 18, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w8ada"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exyix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idbr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6efph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wquv1")
+}],
+"loop": true,
+"name": &"mad",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w8ada")
@@ -91,7 +125,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" index="0"]
 position = Vector2(0, -2)
-scale = Vector2(5, 3)
+scale = Vector2(7, 4)
 shape = SubResource("RectangleShape2D_rs5ih")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
@@ -99,7 +133,7 @@ texture_filter = 1
 position = Vector2(-1, -2)
 scale = Vector2(1.0000001, 1)
 sprite_frames = SubResource("SpriteFrames_w8ada")
-animation = &"scared"
+animation = &"mad"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="2"]
 position = Vector2(0, -2)

@@ -1,9 +1,26 @@
-[gd_scene load_steps=16 format=3 uid="uid://caqywudh0hxpa"]
+[gd_scene load_steps=21 format=3 uid="uid://caqywudh0hxpa"]
 
 [ext_resource type="PackedScene" uid="uid://d14awcgysjd7v" path="res://scenes/entities/robot/robot.tscn" id="1_yl61w"]
 [ext_resource type="Script" uid="uid://kwyt6hsul7vf" path="res://scenes/entities/robot/green_robot/green_robot.gd" id="2_6im00"]
 [ext_resource type="Texture2D" uid="uid://4i8i8sjewemy" path="res://assets/images/sprites/green_robot.png" id="2_50u12"]
 [ext_resource type="Texture2D" uid="uid://dod3dvfdkegh2" path="res://assets/images/sprites/green_robot_scared.png" id="2_qebe3"]
+[ext_resource type="Texture2D" uid="uid://cq3tsn5ocm68h" path="res://assets/images/sprites/green_robot_mad.png" id="3_8kboo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11j2t"]
+atlas = ExtResource("3_8kboo")
+region = Rect2(0, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8j4y"]
+atlas = ExtResource("3_8kboo")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr27u"]
+atlas = ExtResource("3_8kboo")
+region = Rect2(36, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s75o1"]
+atlas = ExtResource("3_8kboo")
+region = Rect2(54, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxqsj"]
 atlas = ExtResource("2_qebe3")
@@ -39,6 +56,23 @@ region = Rect2(54, 0, 18, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iybr5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11j2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8j4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr27u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s75o1")
+}],
+"loop": true,
+"name": &"mad",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bxqsj")
@@ -91,14 +125,14 @@ texture_filter = 1
 position = Vector2(-4, -2)
 scale = Vector2(1.0000001, 1)
 sprite_frames = SubResource("SpriteFrames_iybr5")
-animation = &"scared"
+animation = &"mad"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" index="1"]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" index="0"]
 position = Vector2(-1.0000305, 0)
-scale = Vector2(5, 3)
+scale = Vector2(7, 4)
 shape = SubResource("RectangleShape2D_75w8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="2"]
