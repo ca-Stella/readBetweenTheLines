@@ -5,6 +5,10 @@ var store_scene
 var blue
 var green
 var pink 
+var blue_robots = []
+var pink_robots = []
+var green_robots = []
+var low_rep = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,14 +17,17 @@ func _ready() -> void:
 	blue = 50
 	green = 50
 	pink = 50
+	
+	$Timer.start()
+	$Timer.wait_time = 10
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
-
-
+	if blue < 25 or green < 25 or pink < 25:
+		low_rep = true
+	else:
+		low_rep = false	
 
 func _on_store_shop_closed() -> void:
 	store_scene.visible = false
@@ -138,3 +145,27 @@ func _on_start_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	$StartScreen.visible = true
+func _on_timer_timeout() -> void:
+	if low_rep == true:
+		var low_reps = []
+		if blue < 25:
+			low_reps.append("blue")
+		if green < 25:
+			low_reps.append("green")
+		if pink < 25:
+			low_reps.append("pink")
+		var colour = low_reps.pick_random()
+		var r = null
+		if colour == "blue":
+			var l = pink_robots + green_robots
+			r = l.pick_random()
+			colour = "Blue"
+		elif colour == "green":
+			var l = pink_robots + blue_robots
+			r = l.pick_random()
+			colour = "Green"
+		else:
+			var l = blue_robots + green_robots
+			r = l.pick_random()
+			colour = "Pink"
+		r.get_node("Speech Bubble").show_bubble(colour)

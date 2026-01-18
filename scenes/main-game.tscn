@@ -1,11 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://cmlr1byd61u4c"]
+
+[gd_scene load_steps=18 format=3 uid="uid://cvcbt8abnpoyi"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
 [ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
-[ext_resource type="PackedScene" uid="uid://fy4euff3u60u" path="res://scenes/ui/start_screen/start_screen.tscn" id="2_itmgl"]
-[ext_resource type="PackedScene" uid="uid://bn8p1gihlkk27" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
+[ext_resource type="PackedScene" uid="uid://c4paxxg1abyth" path="res://scenes/ui/start_screen/start_screen.tscn" id="2_itmgl"]
+[ext_resource type="PackedScene" path="res://scenes/game/stats/stats-scene.tscn" id="2_vkcxy"]
 [ext_resource type="PackedScene" uid="uid://7huukrp8bcut" path="res://scenes/game/store/store.tscn" id="3_vkcxy"]
-[ext_resource type="Script" uid="uid://cwpxmt2dhhohr" path="res://scenes/game/stats/stats_scene.gd" id="4_bxljq"]
+[ext_resource type="Script" path="res://scenes/game/stats/stats_scene.gd" id="4_bxljq"]
 [ext_resource type="Texture2D" uid="uid://d0bwq5o2a6ecf" path="res://assets/images/sprites/hp_stats/hpHolderGray.png" id="5_2ggl6"]
 [ext_resource type="Texture2D" uid="uid://do2vx0i8uy3y1" path="res://assets/images/sprites/hp_stats/PUBLISHBUTTON_hover.png" id="5_ebdxb"]
 [ext_resource type="Texture2D" uid="uid://n41yvh8wf0aa" path="res://assets/images/sprites/hp_stats/hpProgress.png" id="6_5pt6e"]
@@ -171,6 +172,8 @@ offset_right = 150.0
 offset_bottom = 105.0
 
 [connection signal="pressed" from="OptionsScreenStart/VBoxContainer/back" to="." method="_on_back_pressed"]
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="StartScreen/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/GNewsButton" to="." method="_on_g_news_button_pressed"]
@@ -181,6 +184,7 @@ offset_bottom = 105.0
 [connection signal="update_stats" from="Store" to="." method="_on_store_update_stats"]
 [connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="." method="_on_close_shop_pressed"]
 [connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="World/StatsScene" method="_on_close_shop_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="OptionsScreenStart"]
 [editable path="StartScreen"]
