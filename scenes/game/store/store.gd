@@ -9,14 +9,47 @@ var headline3
 @export var headline_choice: PackedScene
 
 var headlines = {
-	"pink-kill": [{"cost": 10, "text": "Pink robots killed a blue robot", "hp_change": -20}, 
-			{"cost": 5, "text": "Blue robot dead!", "hp_change": -10}
-			],
-	"green-help": [{"cost": 20, "text": "Green robot helps out a blue robot", "hp_change": 30},
-			{"cost": 25, "text": "Green robot saves blue robot from red robot", "hp_change": -20}
+	"pink-kill": [
+		{"cost": 10,
+			"text": "Pink robots killed a blue robot", 
+			"pink_rep": -20, 
+			"blue_rep": 10, 
+			"green_rep": 0, 
+		}, 
+		{"cost": 5, 
+			"text": "Blue robot dead!", 
+			"pink_rep": 0, 
+			"blue_rep": 10, 
+			"green_rep": 0, 
+		}
 	],
-	"blue-unite": [{"cost": 15, "text": "Blue robots unite together! ", "hp_change": 10},
-			{"cost": 25, "text": "Blue robots hate red robots!", "hp_change": -50}
+	"green-help": [
+		{"cost": 20, 
+			"text": "Green robot helps out a blue robot", 
+			"pink_rep": 0, 
+			"blue_rep": 10, 
+			"green_rep": 20, 
+		},
+		{"cost": 25, 
+			"text": "Green robot saves blue robot from pink robot", 
+			"pink_rep": -20, 
+			"blue_rep": 10, 
+			"green_rep": 30, 
+		}
+	],
+	"blue-unite": [
+		{"cost": 15, 
+			"text": "Blue robots unite together! ", 
+			"pink_rep": 0, 
+			"blue_rep": 10, 
+			"green_rep": 0, 
+		},
+		{"cost": 25, 
+			"text": "Blue robots hate pink robots!",
+			"pink_rep": 20, 
+			"blue_rep": -10, 
+			"green_rep": 0, 
+		}
 	],
 }
 
