@@ -22,10 +22,10 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_volume_db(0, toggled_on)
 
 
-func _on_back_pressed() -> void:	
+#func _on_back_pressed() -> void:	
 	#send back to scene depending where they came from 
-	var tree := get_tree()
-	var path := str(tree.get_meta("return_scene_path"))
-	#clear
-	tree.remove_meta("return_scene_path")
-	tree.change_scene_to_file(path)
+	#var tree := get_tree()
+	#var path := str(tree.get_meta("return_scene_path"))
+	##clear
+	#tree.remove_meta("return_scene_path")
+	#tree.change_scene_to_file(path)

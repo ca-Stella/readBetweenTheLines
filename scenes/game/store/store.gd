@@ -244,6 +244,7 @@ func _process(delta: float) -> void:
 
 func _on_close_shop_pressed() -> void:
 	print("closey")
+	unselectAll()
 	emit_signal("shop_closed")
 
 

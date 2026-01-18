@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmlr1byd61u4c"]
+[gd_scene load_steps=19 format=3 uid="uid://cmlr1byd61u4c"]
 
 [ext_resource type="PackedScene" uid="uid://diy5r65nsqwde" path="res://scenes/game/world/world.tscn" id="1_2vlba"]
 [ext_resource type="Script" uid="uid://dru4r4s26dbx2" path="res://scenes/main_game.gd" id="1_087lc"]
@@ -17,9 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://f0fbapb2i25y" path="res://assets/images/sprites/shop/school_bw.png" id="9_64rpb"]
 [ext_resource type="Texture2D" uid="uid://bsu1dlvli8el6" path="res://assets/images/sprites/shop/park_bw.png" id="10_cpt4g"]
 [ext_resource type="PackedScene" uid="uid://b3wbx0ov48nk7" path="res://scenes/ui/game_over_scene/game_over_screen.tscn" id="12_5pt6e"]
+[ext_resource type="PackedScene" uid="uid://ckvjy87ctxbtq" path="res://scenes/ui/options_screen/options_screen.tscn" id="18_4kos8"]
 
 [node name="MainGame" type="Node"]
 script = ExtResource("1_087lc")
+
+[node name="OptionsScreenStart" parent="." instance=ExtResource("18_4kos8")]
 
 [node name="StartScreen" parent="." instance=ExtResource("2_itmgl")]
 size_flags_horizontal = 4
@@ -167,6 +170,7 @@ offset_top = -105.0
 offset_right = 150.0
 offset_bottom = 105.0
 
+[connection signal="pressed" from="OptionsScreenStart/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="StartScreen/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="World/StatsScene/VBoxContainer/VBoxContainer2/TextureRect/Control/GNewsButton" to="." method="_on_g_news_button_pressed"]
@@ -178,6 +182,7 @@ offset_bottom = 105.0
 [connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="." method="_on_close_shop_pressed"]
 [connection signal="pressed" from="Store/ColorRect/HBoxContainer/CloseShop" to="World/StatsScene" method="_on_close_shop_pressed"]
 
+[editable path="OptionsScreenStart"]
 [editable path="StartScreen"]
 [editable path="World/StatsScene"]
 [editable path="Store"]
