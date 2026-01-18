@@ -1,5 +1,5 @@
-extends Robot
+extends "res://scenes/entities/robot/Robot.gd"
 
 func _ready():
 	super._ready()
-	var colour = "blue"
+	colour = "blue"

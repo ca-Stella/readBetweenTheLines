@@ -8,7 +8,9 @@ var velocity = Vector2.ZERO
 @onready var sprite = $"CharacterBody2D/AnimatedSprite2D"
 @onready var collision_area = $"CharacterBody2D/Area2D"
 var speed = 40
-var reputation = 50
+var reputation = 0
+var is_scared = false
+var colour = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +27,21 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	if is_walking:
+	if is_scared:
+		var nearest_scare = null
+		for body in collision_area.get_overlapping_bodies():
+			if body.get_parent().colour != colour and body.get_parent().reputation < 50:
+				nearest_scare = body
+				break
+		if nearest_scare != null:
+			direction = (position - nearest_scare.position).normalized()
+			velocity = direction * speed
+			sprite.play("scared")
+			if direction.x != 0:
+				sprite.flip_h = direction.x < 0
+		else:
+			is_scared = false
+	elif is_walking:
 		velocity = direction * speed
 		sprite.play("walk")
 	else:
@@ -45,6 +61,8 @@ func _physics_process(delta: float) -> void:
 		direction.y = -direction.y
 
 func _on_timer_timeout() -> void:
+	if is_scared:
+		return
 	is_walking = !is_walking
 	
 	if is_walking:
@@ -62,7 +80,6 @@ func change_rep(value):
 	reputation += value
 	
 func _on_area_entered(body):
-	if body.get_parent().reputation < 50:
-		var x = body.position.x - position.x
-		var y = body.position.y - position.y
-		direction = Vector2(-x, -y).normalized()
+	if body.get_parent().colour != colour:
+		if body.get_parent().reputation < 50:
+			is_scared = true
