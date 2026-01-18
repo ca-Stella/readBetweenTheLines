@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baiw7daxael8b"
-path="res://.godot/imported/Newspaper.png-d0114bcb3b4a9e72c0f53937595d7311.ctex"
+uid="uid://ef3nqvm6hjn"
+path="res://.godot/imported/park.png-feb67124be89e6ad6f5e9c59114cb99e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/newsletter/Newspaper.png"
-dest_files=["res://.godot/imported/Newspaper.png-d0114bcb3b4a9e72c0f53937595d7311.ctex"]
+source_file="res://assets/images/sprites/shop/park.png"
+dest_files=["res://.godot/imported/park.png-feb67124be89e6ad6f5e9c59114cb99e.ctex"]
 
 [params]
 
