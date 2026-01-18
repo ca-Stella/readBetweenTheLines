@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6ee8jjkf4d23"
-valid=false
+path="res://.godot/imported/blue_robot1.png-89ba74ffbeede7da0efc90188016f984.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://scenes/entities/robot/blue_robot/blue_robot1.png"
+dest_files=["res://.godot/imported/blue_robot1.png-89ba74ffbeede7da0efc90188016f984.ctex"]
 
 [params]
 
